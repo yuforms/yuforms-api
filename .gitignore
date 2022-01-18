@@ -1,3 +1,5 @@
+!public/index.php
+/public/
 
 ###> symfony/framework-bundle ###
 /.env.local
