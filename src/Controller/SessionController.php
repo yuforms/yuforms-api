@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Request\SignUpRequest;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,10 +13,11 @@ class SessionController extends AbstractController
     /**
      * @Route("/api/v1/sign-up", name="sign-up", methods={"POST"})
      */
-    public function signUp(Request $request): Response
+    public function signUp(SignUpRequest $request): Response
     {
         return $this->json([
-            'message' => 'here is going to be sign-up endpoint'
+            'message' => 'here is going to be sign-up endpoint',
+            'content' => $request->getContentAsArray(),
         ]);
     }
 
